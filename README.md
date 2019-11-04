@@ -8,8 +8,10 @@ Source Code Repo:https://github.com/DevCodeCampInstructor/WebAPIStarter
 
 Total points: /70
 
-(5 points): As a developer, I want to make good, consistent commits.
-(2.5 points) As a developer, I want to create a Movie model with properties for title, genre, and director name.
+IN PROGRESS - (5 points): As a developer, I want to make good, consistent commits.
+
+DONE - (2.5 points) As a developer, I want to create a Movie model with properties for title, genre, and director name.
+
 (2.5 points) As a developer, I want to implement the seeded data that was given to me by the instructors, so that my database will be seeded.
 (15 points) As a developer, I want to build a REST web API in ASP.NET, so that I can make HTTP requests to GET, PUT, and POST data to the data set.
 (5 points) As a developer, I want to use Postman to make a POST, PUT, and both GET requests (get by id  and get all) request to my REST web API, save it to a collection, and then export it as a JSON from Postman.
