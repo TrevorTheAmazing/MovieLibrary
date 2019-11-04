@@ -10,6 +10,16 @@ namespace WebAPISample.Controllers
 {
     public class MovieController : ApiController
     {
+        //member variables
+        ApplicationDbContext db;
+
+        //constructor
+        public MovieController()
+        {
+            db = new ApplicationDbContext();
+        }
+
+        //member methods
         // GET api/values
         public IEnumerable<string> Get()
         {
