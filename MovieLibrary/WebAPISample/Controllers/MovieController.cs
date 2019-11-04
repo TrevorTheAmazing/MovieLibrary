@@ -5,9 +5,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WebAPISample.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WebAPISample.Controllers
 {
+    //[Route("api/[Movie]")]
     public class MovieController : ApiController
     {
         //member variables
@@ -21,17 +24,24 @@ namespace WebAPISample.Controllers
 
         //member methods
         // GET api/values
-        public IEnumerable<string> Get()
+        [HttpGet]
+        //public IEnumerable<Movie> Get()
+        public IHttpActionResult Get()
         {
-            // Retrieve all movies from db logic
-            return new string[] { "movie1 string", "movie2 string" };
+            var movies = db.Movies.ToList();
+            return Ok(movies);
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            // Retrieve movie by id from db logic
-            return "value";
+            var movie = db.Movies.Find(id);
+            
+            if (movie == null)
+            {
+                return NotFound();
+            }
+            return Ok(movie);
         }
 
         // POST api/values
