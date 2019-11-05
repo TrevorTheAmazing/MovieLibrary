@@ -21,10 +21,39 @@
             margin-bottom: 10px;
         }
 
+        div {
+            padding-left: 50px;
+
+                }
+       /* 
+        th{
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+
+        td{
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+
+*/
+        table, th, td {
+        border: 1px solid black;
+            }
+            table.a {
+            table-layout: auto;
+            width: 180px;
+            }
+
         /* #container { */
         #my-form {
             width: 90% margin: auto;
             padding: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            table-layout: 10px;
         }
     </style>
     <title>jQuery AJAX POST Form</title>
@@ -36,11 +65,6 @@
         <h1>MovieLibrary</h1>
     </header>
 
-    <div id="response">
-        <pre></pre>
-
-    </div>
-
     <form id="my-form">
         <input type="text" name="title" placeholder="Title" />
         <input type="text" name="director" placeholder="Director" />
@@ -48,19 +72,22 @@
         <button type="submit" value="Submit" id="submit">Submit</button>
     </form>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./app.js"></script>
 
-    <div>
+    <div style= "width:100%;" id="response">
+        <pre></pre>
+        <div>
         <table>
             <tr>
-                <th>Title</th>
-                <th>Director</th>
-                <th>Genre</th>
             </tr>
             <tr>
         </table>
     </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+
+    
 
    <!--  <script>
 

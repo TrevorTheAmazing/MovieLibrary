@@ -21,10 +21,11 @@
         }).done(function(data)
         {
             //console.log(data);
+            $('#response').append('<table>'+ '<tr>'+ '<td>' + "Title" + '</td>' + '<td>' + "Director"  + '</td>' + '<td>' + "Genre" + '</td>' + '</tr>' + '<table>');
 
             $.map(data, function(movie, i){
 
-                $('#response').append('<h3>'+movie.Title + '</h3><p>' + movie.Director + '</p>');
+                $('#response').append('<table>'+ '<tr>' + '<td>' + movie.Title + '</td>' + '<td>' + movie.Director + '</td>' + '<td>' + movie.Genre + '</td>'+'</tr>' + '</table>');
 
 
             });
