@@ -10,7 +10,6 @@ using Newtonsoft.Json.Linq;
 
 namespace WebAPISample.Controllers
 {
-    //[Route("api/[Movie]")]
     public class MovieController : ApiController
     {
         //member variables
@@ -25,7 +24,7 @@ namespace WebAPISample.Controllers
         //member methods
         // GET api/values
         [HttpGet]
-        //public IEnumerable<Movie> Get()
+
         public IHttpActionResult Get()
         {
             var movies = db.Movies.ToList();
@@ -46,41 +45,26 @@ namespace WebAPISample.Controllers
 
         [HttpPost]
         // POST api/values
-        //public void Post(Movie movie)
         public HttpResponseMessage Post([FromBody] Movie movie)
         {
             // Create movie in db logic
-
             try
             {
                 using (var tempDb = new ApplicationDbContext())
                 {
-                    //tempDb.Movies.Add(new Movie()
-                    //{
-                    //    MovieId = movie.MovieId,
-                    //    Title = movie.Title,
-                    //    Director = movie.Director,
-                    //    Genre = movie.Genre
-                    //});
-
                     db.Movies.Add(movie);
 
                     db.SaveChanges();
 
                     var message = Request.CreateResponse(HttpStatusCode.Created, movie);
                     message.Headers.Location = new Uri(Request.RequestUri + movie.MovieId.ToString());
-                    //return Ok(movie.MovieId);
                     return message;
                 }
             }
             catch(Exception e)
             {
-                //Console.WriteLine(e.Message);
-                //return BadRequest();
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e);
             }
-            
-            
         }
 
         // PUT api/values/5
@@ -95,7 +79,7 @@ namespace WebAPISample.Controllers
                 {
 
 
-                    movieFromDatabase = db.Movies.Where(c => c.MovieId == updatedMovieInformation.MovieId).SingleOrDefault();
+                    movieFromDatabase = tempDb.Movies.Where(c => c.MovieId == updatedMovieInformation.MovieId).SingleOrDefault();
 
                     movieFromDatabase.Title = updatedMovieInformation.Title;
                     movieFromDatabase.Director = updatedMovieInformation.Director;
@@ -105,7 +89,7 @@ namespace WebAPISample.Controllers
                 }
                 return Ok();
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 return NotFound();
             }
@@ -129,11 +113,6 @@ namespace WebAPISample.Controllers
             {
                 Console.WriteLine(e.Message);
             }
-            
-            
-
-            
         }
     }
-
 }

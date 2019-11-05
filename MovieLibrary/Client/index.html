@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-size: 17px;
+            font-family: arial;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+
+        /* #container { */
+        #my-form {
+            width: 90% margin: auto;
+            padding: 10px;
+        }
+    </style>
     <title>jQuery AJAX POST Form</title>
     <meta charset="utf-8">
 </head>
+
 <body>
+    <header>
+        <h1>MovieLibrary</h1>
+    </header>
 
-<div id="response">
-    <pre></pre>
-</div>
+    <div id="response">
+        <pre></pre>
 
-<form id="my-form">
-    <input type="text" name="title" placeholder="Title" />
-    <input type="text" name="director" placeholder="Director" />
+    </div>
 
-    <button type="submit">Submit</button>
-</form>
+    <form id="my-form">
+        <input type="text" name="title" placeholder="Title" />
+        <input type="text" name="director" placeholder="Director" />
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="./app.js"></script>
+        <button type="submit" value="Submit" id="submit">Submit</button>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+
+
+    <script>
+
+        $("#submit").on("click", function () {
+            test();
+        })
+    </script>
+
 </body>
+
 </html>
