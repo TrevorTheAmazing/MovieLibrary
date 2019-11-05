@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "4ed0a004-164a-41f8-82a1-4682cc96546c",
+		"name": "MovieLibraryHttpRequests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44352/api/Movie/7",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MovieID\": 7,\n    \"Title\": \"Robocop\",\n    \"Genre\": \"Action\",\n    \"Director\": \"Paul Verhoeven\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/Movie/7",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Movie",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44352/api/Movie/7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Title\": \"Robomop\",\n    \"Genre\": \"Action\",\n    \"Director\": \"Paul Verhoeven\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/Movie/7",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Movie",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44352/api/Movie/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Title\": \"Robomop\",\n    \"Genre\": \"Action\",\n    \"Director\": \"Paul Verhoeven\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/Movie/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Movie",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
